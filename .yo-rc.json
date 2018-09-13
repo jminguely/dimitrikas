@@ -1,0 +1,10 @@
+{
+  "generator-toolbox": {
+    "promptValues": {
+      "repo": "https://jminguely@bitbucket.org/jminguely/dimitrikas.git",
+      "atomic": "atoms<molecules<organisms",
+      "src": "assets/",
+      "dest": "htdocs/content/themes/dimitrikas/build/"
+    }
+  }
+}

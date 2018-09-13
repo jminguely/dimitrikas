@@ -1,0 +1,34 @@
+{
+  "src": "assets/",
+  "dest": "htdocs/content/themes/dimitrikas/build/",
+  "ghpages": "htdocs/content/themes/dimitrikas/build/",
+  "remote": "",
+  "images": [
+    "htdocs/content/themes/dimitrikas/build/images/**/*"
+  ],
+  "svg": [
+    "htdocs/content/themes/dimitrikas/build/svg/**/*"
+  ],
+  "icons": [
+    "htdocs/content/themes/dimitrikas/build/icons/**/*"
+  ],
+  "iconsFontName": "icon",
+  "fonts": [
+    "htdocs/content/themes/dimitrikas/build/fonts/**/*"
+  ],
+  "vendors": {
+    "css": [],
+    "js": [
+      "node_modules/bootstrap/js/dist/alert.js",
+      "node_modules/bootstrap/js/dist/button.js",
+      "node_modules/bootstrap/js/dist/collapse.js",
+      "node_modules/bootstrap/js/dist/dropdown.js",
+      "node_modules/bootstrap/js/dist/tab.js",
+      "node_modules/bootstrap/js/dist/util.js"
+    ]
+  },
+  "singles": [{
+    "src": "",
+    "dest": ""
+  }]
+}

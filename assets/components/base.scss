@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+// init:
+@import '../config/bootstrap';
+
+// Don't edit the following sections, they should always be preceded by a blank
+// line and have exactly those names for the `$ yo toolbox:generate` command
+// to work
+
+
+//
+// atoms:
+@import 'atoms/badge/badge';
+
+//
+// molecules:
+
+//
+// organisms:
+@import 'organisms/header/header';
+@import 'organisms/footer/footer';
+@import 'organisms/navigation/navigation';
+
