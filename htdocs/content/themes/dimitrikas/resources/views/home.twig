@@ -1,0 +1,18 @@
+{% extends 'layouts/main.twig' %}
+
+{% block main %}
+	<h1>Hello, {{ name }}</h1>
+{% endblock %}
+
+{% block sidebar %}
+	<h3>Latest posts</h3>
+	<ul>
+		{% for item in items %}
+			<li>{{ item.post_title }}</li>
+		{% endfor %}
+	</ul>
+	<div>
+
+
+	</div>
+{% endblock %}

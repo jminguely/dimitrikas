@@ -4,6 +4,6 @@
 // Define environment type
 /*----------------------------------------------------*/
 return [
-    'local' => 'INSERT-HOSTNAME',
+    'local' => 'mingus.local',
     'production' => 'INSERT-HOSTNAME'
 ];

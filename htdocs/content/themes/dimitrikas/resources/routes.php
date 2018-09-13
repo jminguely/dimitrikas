@@ -9,7 +9,7 @@
  *
  */
 
-Route::get('home', function()
-{
-    return view('welcome');
+Route::match(['GET', 'POST'], 'home', function ($post, $query) {
+    $posts = $query->get_posts();
+    return view('home', ['name' => 'Julien', 'items' => $posts]);
 });

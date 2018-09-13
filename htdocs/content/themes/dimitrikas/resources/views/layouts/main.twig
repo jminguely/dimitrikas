@@ -1,0 +1,11 @@
+{{ include('parts/header.twig') }}
+<div class="container">
+  {% block main %}{% endblock %}
+</div>
+
+<div class="sidebar">
+  {% block sidebar %}	
+    <p>Sidebar section from the "main.twig" layout file.</p>
+  {% endblock %}
+</div>
+{{ include('parts/footer.twig') }}
