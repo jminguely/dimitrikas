@@ -1,8 +1,15 @@
-<footer class="site-footer">
-  Footer
-  <hr>
-  {{ Form.open() }}
+  <footer class="site-footer">
+    Footer
+    <hr>
     {{ Form.text('username') }}
-  {{ Form.close() }}
-</footer>
-<form action="http://dk.test/" method="POST" accept-charset="UTF-8"><input type="hidden" id="_themosisnonce" name="_themosisnonce" value="60f70e06b3" /><input type="hidden" name="_wp_http_referer" value="/" /> <input type="text" name="username"> </form>
+  </footer>
+  {{ wp_footer() }}
+
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+</body>
+
+</html>
