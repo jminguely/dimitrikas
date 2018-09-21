@@ -14,7 +14,7 @@ defined('DS') ? DS : define('DS', DIRECTORY_SEPARATOR);
 if (!function_exists('themosis_theme_assets')) {
     /**
      * Return the application theme public assets directory URL.
-     * Public assets are stored into the `dist` directory.
+     * Public assets are stored into the `build` directory.
      *
      * @return string
      */
@@ -24,10 +24,10 @@ if (!function_exists('themosis_theme_assets')) {
             $segments = explode('themes', get_template_directory_uri());
             $theme = (strpos($segments[1], DS) !== false) ? substr($segments[1], 1) : $segments[1];
 
-            return get_home_url().'/'.CONTENT_DIR.'/themes/'.$theme.'/dist';
+            return get_home_url().'/'.CONTENT_DIR.'/themes/'.$theme.'/build';
         }
 
-        return get_template_directory_uri().'/dist';
+        return get_template_directory_uri().'/build';
     }
 }
 
@@ -103,10 +103,10 @@ $theme['view.finder']->addLocation(themosis_path('theme.resources').'views');
 $theme['twig.loader']->setPaths($theme['view.finder']->getPaths());
 
 /*
- * Register theme public assets folder [dist directory].
+ * Register theme public assets folder [build directory].
  */
 $theme['asset.finder']->addPaths([
-    themosis_theme_assets() => themosis_path('theme').'dist',
+    themosis_theme_assets() => themosis_path('theme').'build',
 ]);
 
 /*
