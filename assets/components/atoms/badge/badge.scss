@@ -9,11 +9,23 @@
 .badge {
   position: relative;
   background: $primary;
+  color: $white;
   width: 100%;
   max-width: 400px;
   height: 0;
   padding-bottom: 100%;
   border-radius: 50%;
+  font-size: 1.4em;
+
+  &.badge-outline {
+    background: transparent;
+    color: $primary;
+    border: 1px solid $primary;
+  }
+
+  &.long-text {
+    font-size: 1em;
+  }
 
   .content {
     display: flex;
@@ -27,8 +39,8 @@
     p {
       position: relative;
       margin: auto;
-      color: $white;
-      font-size: 1.4em;
+      color: inherit;
+      font-size: inherit;
       line-height: 1.1;
       text-align: center;
     }
