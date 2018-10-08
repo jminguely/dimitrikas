@@ -1,0 +1,17 @@
+{% if categories %}
+  <h2>Thèmes</h2>
+  <hr class="w-50 mr-0">
+  <div class="d-flex flex-column">
+    {% for category in categories %}         
+      {% if category.term_id == current_term_id %}
+        <span class="badge badge-secondary badge-lg ml-auto mb-3">
+          {{ category.name }}
+        </span>
+      {% else %}
+        <a class="badge badge-outline badge-lg ml-auto mb-3" href="{{ fn('get_term_link', category.term_id, 'category') }}">
+          {{ category.name }}
+        </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+{% endif %}

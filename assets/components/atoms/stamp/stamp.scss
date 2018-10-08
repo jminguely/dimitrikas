@@ -1,0 +1,48 @@
+@charset 'utf-8';
+
+.stamp-container {
+  max-width: 325px;
+  display: inline-block;
+  width: 100%;
+}
+
+.stamp {
+  position: relative;
+  background: $primary;
+  color: $white;
+  width: 100%;
+  max-width: 400px;
+  height: 0;
+  padding-bottom: 100%;
+  border-radius: 50%;
+  font-size: 1.4em;
+
+  &.stamp-outline {
+    background: transparent;
+    color: $primary;
+    border: 1px solid $primary;
+  }
+
+  &.long-text {
+    font-size: 1em;
+  }
+
+  .content {
+    display: flex;
+    position: absolute;
+    width: 100/11*7%;
+    height: 100/11*7%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    p {
+      position: relative;
+      margin: auto;
+      color: inherit;
+      font-size: inherit;
+      line-height: 1.1;
+      text-align: center;
+    }
+  }
+}

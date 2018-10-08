@@ -1,0 +1,9 @@
+<div class="wrap">
+    <h1>{{ __page.get('title') }}</h1>
+    {{ Form.open('cms/wp-admin/options.php', 'post', false, {'class': 'themosis-core-page'})|raw }}
+    <div class="alignright">
+        {{ Form.submit('submit', 'Enregistrer', {'class': 'button button-primary'})|raw }}
+    </div>
+        {{ __page.renderSettings() }}
+    {{ Form.close()|raw }}
+</div>

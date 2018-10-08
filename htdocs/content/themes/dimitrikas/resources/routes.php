@@ -9,7 +9,16 @@
  *
  */
 
-Route::match(['GET', 'POST'], 'home', function ($post, $query) {
-    $posts = $query->get_posts();
-    return view('home', ['name' => 'Julien', 'items' => $posts]);
+Route::get('contact', 'Contact@index');
+Route::post('contact', 'Contact@process');
+Ajax::listen('contact-form', ['Theme\Controllers\Contact', 'ajaxProcess']);
+
+Route::get('home', 'Blog@index');
+Route::get('category', 'Blog@index');
+Route::get('postTypeArchive', array('post', 'uses' => 'Blog@index'));
+Route::get('singular', array('post', 'uses' => 'Blog@single'));
+
+
+Route::get('front', function () {
+    return view('front', ['name' => 'accueil']);
 });

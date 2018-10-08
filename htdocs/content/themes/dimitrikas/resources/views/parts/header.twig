@@ -17,7 +17,27 @@
   <!--[if lte IE 9]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
+  <div class="site-wrapper">
+    <div class="top-content">
 
-  <header class="site-header">
-    Header
-  </header>
+    <header class="site-header">
+      <div class="container text-center">
+        <a href="#"><img src="{{ templateUri }}/build/images/logo.png"></a>
+        <a href="#"><h1>Dimitri Kas</h1></a> 
+        <h2>rédacteur web seo print</h2>
+      </div>
+    </header>
+
+    <div class="d-md-none text-center my-2">
+      <a class="btn btn-primary d-md-none toggle-navigation" data-toggle="collapse" href="#main-nav" role="button" aria-expanded="false" aria-controls="main-nav">
+        Menu
+      </a>
+    </div>
+    
+    <nav class="main-nav" id="main-nav">
+      <div class="content">
+        {% for item in primaryMenu %}
+          <a href="{{ item.url }}">{{ item.title }}</a>
+        {% endfor %}
+      </div>
+    </nav>

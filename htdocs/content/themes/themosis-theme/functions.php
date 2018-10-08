@@ -24,10 +24,10 @@ if (!function_exists('themosis_theme_assets')) {
             $segments = explode('themes', get_template_directory_uri());
             $theme = (strpos($segments[1], DS) !== false) ? substr($segments[1], 1) : $segments[1];
 
-            return get_home_url().'/'.CONTENT_DIR.'/themes/'.$theme.'/dist';
+            return get_home_url().'/'.CONTENT_DIR.'/themes/'.$theme;
         }
 
-        return get_template_directory_uri().'/dist';
+        return get_template_directory_uri();
     }
 }
 
@@ -270,6 +270,7 @@ function themosis_theme_global_object()
     $output .= "//<![CDATA[\n\r";
     $output .= 'var '.$namespace." = {\n\r";
     $output .= "ajaxurl: '".$url."',\n\r";
+    $output .= "ajaxnonce: '".$url."',\n\r";
 
     if (!empty($datas)) {
         foreach ($datas as $key => $value) {

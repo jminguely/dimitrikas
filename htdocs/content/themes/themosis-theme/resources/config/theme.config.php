@@ -22,6 +22,8 @@ return [
     // Set WordPress admin ajax file without the PHP extension
     /* --------------------------------------------------------------- */
     'ajaxurl' => 'admin-ajax',
+    
+    'ajaxnonce' => wp_create_nonce('dk'),
 
     /* --------------------------------------------------------------- */
     // Cleanup Header

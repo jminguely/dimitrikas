@@ -9,6 +9,6 @@ return [
     * http://codex.wordpress.org/Function_Reference/register_nav_menus
     * 
     */
-    'header-nav' => __('Header navigation', THEME_TEXTDOMAIN),
+    'primary' => __('Primary', THEME_TEXTDOMAIN),
 
 ];

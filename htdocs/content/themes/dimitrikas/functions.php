@@ -24,10 +24,10 @@ if (!function_exists('themosis_theme_assets')) {
             $segments = explode('themes', get_template_directory_uri());
             $theme = (strpos($segments[1], DS) !== false) ? substr($segments[1], 1) : $segments[1];
 
-            return get_home_url().'/'.CONTENT_DIR.'/themes/'.$theme.'/build';
+            return get_home_url().'/'.CONTENT_DIR.'/themes/'.$theme;
         }
 
-        return get_template_directory_uri().'/build';
+        return get_template_directory_uri();
     }
 }
 
@@ -106,7 +106,7 @@ $theme['twig.loader']->setPaths($theme['view.finder']->getPaths());
  * Register theme public assets folder [build directory].
  */
 $theme['asset.finder']->addPaths([
-    themosis_theme_assets() => themosis_path('theme').'build',
+    themosis_theme_assets() => themosis_path('theme'),
 ]);
 
 /*
@@ -270,6 +270,7 @@ function themosis_theme_global_object()
     $output .= "//<![CDATA[\n\r";
     $output .= 'var '.$namespace." = {\n\r";
     $output .= "ajaxurl: '".$url."',\n\r";
+    $output .= "ajaxnonce: '".Themosis\Facades\Config::get('theme.ajaxnonce')."',\n\r";
 
     if (!empty($datas)) {
         foreach ($datas as $key => $value) {

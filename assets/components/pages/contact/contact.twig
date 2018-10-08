@@ -1,0 +1,30 @@
+<div class="site-wrapper">
+    <div class="top-content">
+      {% include "organisms::header/header.twig" %}
+      {% include "organisms::navigation/navigation.twig" %}
+      <main class="site-main pt-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8 offset-sm-2 col-lg-6 offset-lg-3">
+              <p class="h1 text-center pt-3 pb-4">
+                <a href="tel:+41 78 943 07 05">+41 78 943 07 05</a>
+              </p>
+              <form action="#" class="py-3">
+                <div class="form-group">
+                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="C’est ici qu’on engage la conversation..."></textarea>
+                  <div class="input-group mt-3">
+                    <input type="email" class="form-control" placeholder="Votre adresse e-mail" aria-label="Votre adresse e-mail" aria-describedby="btnGroupAddon">
+                    <div class="input-group-append">
+                      <input type="submit" class="btn btn-primary" id="btnGroupAddon" value="Envoyer">
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    {% include "organisms::footer/footer.twig" %}
+  </div>
+  
