@@ -1,0 +1,25 @@
+{% extends 'layouts/main.twig' %}
+
+{% block main %}
+	<div class="container">
+		<div class="row">
+			{% for prestation in prestations %}
+				<div class="prestations col-md-4 d-flex flex-column mb-5">
+					<figure class="text-center">
+						{{ fn('wp_get_attachment_image', prestation.picture, 'thumbnail', false, {'class': 'img-fluid mb-0'})|raw }}
+					</figure>
+          <h2 class="text-center mb-0 text-primary font-weight-normal">
+            {{ prestation.titre }}
+          </h2>
+          <hr class="my-3 mx-5">
+          <div class="content">
+            {{ wpautop(prestation.content)|raw }}
+          </div>
+          <a href="/contact" class="btn btn-primary btn-block mt-auto">
+            {{ prestation.buttonLabel}}
+          </a>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}

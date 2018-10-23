@@ -1,16 +1,17 @@
 <?php
-
-namespace Theme\Models;
-
-use Illuminate\Database\Eloquent\Model;
-
-/**
- * Class Post.
- * Help you retrieve data from your $prefix_posts table.
- *
- * @package Theme\Models
- */
-class Post extends Model
-{
-
-}
+class PostModel {
+    /**
+     * Return a list of all published posts.
+     *
+     * @return array
+     */
+    public static function all()
+    {
+        $query = new WP_Query(array(
+            'post_type'         => 'post',
+            'posts_per_page'    => -1,
+            'post_status'       => 'publish'
+        ));
+        return $query->get_posts();
+    }
+} 

@@ -9,8 +9,8 @@
  *
  */
 
-Route::get('contact', 'Contact@index');
-Route::post('contact', 'Contact@process');
+Route::get('page', ['contact', 'uses' => 'Contact@index']);
+Route::post('page', ['contact', 'uses' => 'Contact@process']);
 Ajax::listen('contact-form', ['Theme\Controllers\Contact', 'ajaxProcess']);
 
 Route::get('home', 'Blog@index');
@@ -18,7 +18,12 @@ Route::get('category', 'Blog@index');
 Route::get('postTypeArchive', array('post', 'uses' => 'Blog@index'));
 Route::get('singular', array('post', 'uses' => 'Blog@single'));
 
+Route::get('page', ['realisations/temoignages', 'uses' => 'Page@temoignages']);
+Route::get('page', ['realisations/clients', 'uses' => 'Page@clients']);
+Route::get('page', ['realisations/mandats', 'uses' => 'Project@index']);
+Route::get('page', ['realisations', 'uses' => 'Project@index']);
+Route::get('page', ['prestations', 'uses' => 'Page@prestations']);
+Route::get('front', 'Page@front');
+Route::get('page', 'Page@index');
 
-Route::get('front', function () {
-    return view('front', ['name' => 'accueil']);
-});
+Route::get('singular', ['projects', 'uses' => 'Project@single']);

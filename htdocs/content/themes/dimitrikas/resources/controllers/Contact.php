@@ -2,39 +2,30 @@
 
 namespace Theme\Controllers;
 
+use Theme\Controllers\Page;
 use Theme\Models\MailProvider;
-use Themosis\Route\BaseController;
 use Themosis\Facades\Asset;
 use Themosis\Facades\Input;
-use Themosis\Facades\Ajax;
 use Themosis\Facades\View;
-use Themosis\Page\Option;
 
-class Contact extends BaseController
+class Contact extends Page
 {
-    public function __construct()
-    {
-        $this->register();
-    }
-
-    public function register() {
-        Asset::add('contact_form', 'resources/views/contact.js', ['jquery'], '1.0', true);
-    }
-
-    public function index() {
-        return view('contact');
+    public function index($post, $query) {
+        Asset::add('contact_form', 'resources/views/contact/contact.js', ['jquery'], '1.0', true);
+        return view('contact/page', ['post' => $post]);
     }
 
     public function process() {
+        Asset::add('contact_form', 'resources/views/contact/contact.js', ['jquery'], '1.0', true);
+
         $data = Input::all();
-        print_r($data);exit;
         $validated_data = MailProvider::validate($data);
 
         if ($validated_data) {
             $mailSent = MailProvider::send($data);
-            return view('contact', ['mailSent' => $mailSent]);
+            return view('contact/page', ['mailSent' => $mailSent]);
         }else {
-            return view('contact', ['error' => 1, 'formData' => $data]);
+            return view('contact/page', ['error' => 1, 'formData' => $data]);
         }
     }
 

@@ -1,0 +1,38 @@
+{% extends 'layouts/main.twig' %}
+
+{% block main %}
+	<div class="container">
+    <div class="row">
+      <div class="col-sm-5 col-md-4 text-right">
+        {% include "blog/sidebar.twig" with { 'categories' : categories} %}
+      </div>
+      <div class="col-sm-7 col-md-7">
+        <h2>{{ post.post_title }}</h2>
+        {{ fn('get_the_post_thumbnail', post.ID, 'large', {'class': 'img-fluid'})|raw }}
+       <div class="post-content">
+        {{ wpautop(post.post_content)|raw }}
+       </div>
+       <div class="row">
+        <div class="col-7">
+          <hr class="w-50 ml-0">
+          <h3 class="text-uppercase h5"><span class="text-primary">Recevoir</span> les prochains articles</h3>
+          {{ Form.open('https://dimitrikas.us8.list-manage.com/subscribe/post?u=964e849c55256cdaccd26e304&amp;id=cb7975b07b', 'post', false, { 'class': 'form-inline'})|raw }}
+            <div class="input-group mb-3 w-100">
+              {{ Form.email('EMAIL', '', {'id': 'mce-EMAIL', 'class': 'form-control', 'placeholder': 'votre adresse e-mail'})|raw }}
+              <div class="input-group-append">
+                {{ Form.submit('submit', 'OK', {'class': 'btn btn-primary input-group-button'})|raw }}
+              </div>
+            </div>
+          {{ Form.close()|raw }}
+        </div>
+        <div class="col-5">
+          <hr class="w-50 ml-0">
+          <h3 class="text-uppercase h5"><span class="text-primary">Partager</span> cet article</h3>
+          {% include "parts/social.twig" %}
+        </div>
+       </div>
+      </div>
+    </div>
+  </div>
+  
+{% endblock %}

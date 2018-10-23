@@ -1,0 +1,37 @@
+{% extends 'layouts/main.twig' %}
+
+{% block main %}
+	<div class="container">
+    <div class="row">
+      <div class="col-sm-5 col-md-4 text-right">
+        {% include "blog/sidebar.twig" with { 'categories' : categories} %}
+      </div>
+      <div class="col-sm-7 col-md-8">
+        {% for post in posts %}
+          {% set permalink = fn('get_permalink', post.ID) %}
+          <article class="d-flex flex-row mb-4">
+            <figure class="mr-3">
+            <a href="{{ permalink }}">
+              {{ fn('get_the_post_thumbnail', post.ID, 'thumbnail')|raw }}
+            </a>
+            </figure>
+            <div class="post-content">
+              <h3><a href="{{ permalink }}">{{ post.post_title }}</a></h3>
+              <div class="content mb-3">
+                {{ wp_trim_words(post.post_content|striptags, 50)|raw }}
+              </div>
+              <div class="text-right">
+                <a class="btn btn-primary text-lowercase" href="{{ permalink }}">Lire la suite</a>
+              </div>
+            </div>
+          </article>          
+          <hr class="mb-4">
+        {% endfor %}
+        <nav class="nav-links">
+          {{ pagination|raw }}
+        </nav>
+      </div>
+    </div>
+  </div>
+  
+{% endblock %}

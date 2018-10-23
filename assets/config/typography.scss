@@ -24,3 +24,39 @@ body {
 .lead {
   font-size: 1.5em;
 }
+
+.with-quote-mark{
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  &:before,
+  &:after {
+    position: relative;
+    display: inline-block;
+    content: '';
+    width: 26px;
+    height: 21px;
+    background: url('../images/quotes.png');
+  }
+
+  &:before {
+    float: left;
+    margin: 0 0.5em 0 0;
+    top: -0.25em;
+  }
+
+  &:after {
+    float: right;
+    transform: rotate(180deg);
+    margin: 0 0 0 0.5em;
+  }
+}
+
+.text-medium {
+  font-size: 0.85em;
+}
+
+.text-small {
+  font-size: 0.75em;
+}

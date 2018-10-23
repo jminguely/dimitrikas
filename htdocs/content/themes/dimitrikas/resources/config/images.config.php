@@ -15,5 +15,6 @@ return [
      */
     'themosis' => [200, 300, true, true],
     'thumbnail' => [300, 300, true, true],
+    'thumbnail_project' => [360, 150, true, true],
 
 ];

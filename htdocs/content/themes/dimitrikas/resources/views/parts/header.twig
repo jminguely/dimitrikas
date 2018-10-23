@@ -33,11 +33,16 @@
         Menu
       </a>
     </div>
-    
+
     <nav class="main-nav" id="main-nav">
       <div class="content">
-        {% for item in primaryMenu %}
-          <a href="{{ item.url }}">{{ item.title }}</a>
-        {% endfor %}
+        {{ primaryMenu|raw }}
       </div>
     </nav>
+    {% if subMenu %}
+      <nav class="sub-nav" id="sub-nav">
+        <div class="content">
+          {{ subMenu|raw }}
+        </div>
+      </nav>
+    {% endif %}

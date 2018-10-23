@@ -1,0 +1,25 @@
+{% extends 'layouts/main.twig' %}
+
+{% block main %}
+	<div class="container">
+		<div class="row">
+			{% for testimonial in testimonials %}
+				<div class="testimonials col-sm-6 col-md-4">
+					<figure class="text-center">
+						{{ fn('wp_get_attachment_image', testimonial.picture, 'thumbnail', false, {'class': 'rounded-circle mb-2'})|raw }}
+					</figure>
+					<div class="text-center mb-3 text-medium">
+						{{ testimonial.name }}<br>
+						{{ testimonial.position }}<br>
+						<span class="text-primary">{{ testimonial.company }}</span>
+					</div>
+					<div class="message with-quote-mark">
+						<p>
+						{{ testimonial.message }}
+						</p>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}

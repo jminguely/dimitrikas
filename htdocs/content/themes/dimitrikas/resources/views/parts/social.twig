@@ -1,0 +1,26 @@
+{% set permalink = fn('get_permalink') %}
+
+
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/fr_CA/sdk.js#xfbml=1&version=v3.1&appId=1398553460375410&autoLogAppEvents=1';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <div class="fb-share-button" data-href="{{ permalink }}" data-layout="button_count" data-size="small" data-mobile-iframe="true" style="vertical-align:top"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+    <iframe
+      src="https://platform.twitter.com/widgets/tweet_button.html?url={{permalink}}"
+      width="auto"
+      height="20"
+      style="border: 0; overflow: hidden; margin-top: 4px">
+    </iframe>
+    <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
+    <script type="IN/Share" data-url="{{ permalink }}"></script><br>
+
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <g:plus action="share"></g:plus>
+
+
+
