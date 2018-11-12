@@ -7,3 +7,32 @@
 img.float-left {
   margin: 0 1em 0.5em 0;
 }
+
+.img-full {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.img-badge {
+  float: right;
+  width: 33%;
+  margin-left: 1em;
+  margin-bottom: 1em;
+  max-width: 250px;
+  min-width: 150px;
+
+  img {
+    margin: 0;
+  }
+
+  @include media-breakpoint-down(md) {
+    width: 50%;
+  }
+}
+
+.wp-block-image img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 2em;
+}

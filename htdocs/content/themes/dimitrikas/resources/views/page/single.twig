@@ -3,9 +3,11 @@
 {% block main %}
 	<div class="container">
 		<div class="row">
-			{% for testimonial in testimonials %}
-				
-			{% endfor %}
+			<div class="col-sm-10 offset-sm-1 col-md-8 offset-md-2">
+				<div class="post-content">
+					{{ wpautop(post.post_content)|raw }}
+				</div>
+			 </div>
 		</div>
 	</div>
 {% endblock %}

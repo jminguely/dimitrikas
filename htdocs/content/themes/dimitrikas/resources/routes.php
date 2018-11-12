@@ -18,12 +18,8 @@ Route::get('category', 'Blog@index');
 Route::get('postTypeArchive', array('post', 'uses' => 'Blog@index'));
 Route::get('singular', array('post', 'uses' => 'Blog@single'));
 
-Route::get('page', ['realisations/temoignages', 'uses' => 'Page@temoignages']);
-Route::get('page', ['realisations/clients', 'uses' => 'Page@clients']);
-Route::get('page', ['realisations/mandats', 'uses' => 'Project@index']);
-Route::get('page', ['realisations', 'uses' => 'Project@index']);
+Route::get('page', ['temoignages', 'uses' => 'Page@temoignages']);
+Route::get('page', ['references', 'uses' => 'Page@clients']);
 Route::get('page', ['prestations', 'uses' => 'Page@prestations']);
 Route::get('front', 'Page@front');
 Route::get('page', 'Page@index');
-
-Route::get('singular', ['projects', 'uses' => 'Project@single']);

@@ -10,12 +10,8 @@ class Page extends BaseController
 {
   public function __construct()
   {
-    $args_primary = array( 'theme_location' => 'primary', 'depth' => 1, 'echo' => false );
-    $args_sub = array( 'theme_location' => 'primary', 'level' => 2, 'child_of' => 'Réalisations', 'echo' => false, 'sub_menu' => true );
-
     View::share([
-      'primaryMenu'  => wp_nav_menu( $args_primary ),
-      'subMenu'  => wp_nav_menu( $args_sub ),
+      'primaryMenu'  => wp_nav_menu( array( 'theme_location' => 'primary', 'depth' => 1, 'echo' => false ) ),
     ]);    
   }
 

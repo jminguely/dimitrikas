@@ -3,19 +3,13 @@
 {% block main %}
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-7 col-md-8 col-lg-8 lead">
-				{{ post.post_content|raw }}
-			</div>
-			<div class="col-8 offset-2 col-sm-5 offset-sm-0 col-md-4 col-lg-3 offset-lg-1 text-center text-md-right mt-3 mt-md-0">
-				{% include "parts/stamp.twig" with { stamp_content: 'vos écrits sont sur le point de prendre un tournant décisif'} %}
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="col-md-8 offset-md-2">
-				<hr class="mt-5">
-				<p class="my-1">Ce site n’utilise pas de cookies... mais on peut quand même discuter de 
-					votre projet autour d’un breuvage et de quelques gourmandises</p>
+			<div class="col-12 mt-3 d-flex flex-row align-items-center">
+				<div class="lead">
+					{{ post.post_content|raw }}
+				</div>
+				<div class="img-badge">
+					<img class="img-full" src="{{ templateUri }}/build/svg/dk_badge.svg" alt="vos écrits sont sur le point de prendre un tournant décisif">
+				</div>
 			</div>
 		</div>
 	</div>

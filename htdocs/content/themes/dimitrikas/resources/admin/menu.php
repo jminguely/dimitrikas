@@ -1,49 +1,16 @@
 <?php
 
-add_filter( 'wp_nav_menu_objects', 'my_wp_nav_menu_objects_sub_menu', 10, 2 );
-// filter_hook function to react on sub_menu flag
-function my_wp_nav_menu_objects_sub_menu( $sorted_menu_items, $args ) {
-  if ( isset( $args->sub_menu ) ) {
-    $root_id = 0;
+add_action( 'nav_menu_css_class', 'menu_item_classes', 10, 3 );
 
-    // find the current menu item
-    foreach ( $sorted_menu_items as $menu_item ) {
-      if ( $menu_item->current ) {
-        // set the root id based on whether the current menu item has a parent or not
-        $root_id = ( $menu_item->menu_item_parent ) ? $menu_item->menu_item_parent : $menu_item->ID;
-        break;
-      }
-    }
+function menu_item_classes( $classes, $item, $args ) {
+    // Keep only relevant classes
+    $classes = array_intersect( $classes, array( 
+                               'menu-item', 
+                               'current-menu-item') );
 
-    // find the top level parent
-    if ( ! isset( $args->direct_parent ) ) {
-      $prev_root_id = $root_id;
-      while ( $prev_root_id != 0 ) {
-        foreach ( $sorted_menu_items as $menu_item ) {
-          if ( $menu_item->ID == $prev_root_id ) {
-            $prev_root_id = $menu_item->menu_item_parent;
-            // don't set the root_id to 0 if we've reached the top of the menu
-            if ( $prev_root_id != 0 ) $root_id = $menu_item->menu_item_parent;
-            break;
-          } 
-        }
-      }
+    // Highlight the good archive link if it shows the archive or the single post
+    if ( (is_singular( 'post' ) || is_archive( 'post' )) && get_post_type_archive_link( 'post' ) == $item->url ) {
+        $classes[] = 'current-menu-ancestor';
     }
-    $menu_item_parents = array();
-    foreach ( $sorted_menu_items as $key => $item ) {
-      // init menu_item_parents
-      if ( $item->ID == $root_id ) $menu_item_parents[] = $item->ID;
-      if ( in_array( $item->menu_item_parent, $menu_item_parents ) ) {
-        // part of sub-tree: keep!
-        $menu_item_parents[] = $item->ID;
-      } else if ( ! ( isset( $args->show_parent ) && in_array( $item->ID, $menu_item_parents ) ) ) {
-        // not part of sub-tree: away with it!
-        unset( $sorted_menu_items[$key] );
-      }
-    }
-
-    return $sorted_menu_items;
-  } else {
-    return $sorted_menu_items;
-  }
+    return $classes;
 }

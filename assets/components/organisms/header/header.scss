@@ -3,19 +3,24 @@
 .site-header {
   margin: 2em 0;
 
+  img {
+    max-width: 100px;
+    height: auto;
+  }
+
   a:hover {
     text-decoration: none;
   }
 
   h1 {
-    font-size: 2em;
+    font-size: 1.5em;
     text-decoration: none;
     color: $primary;
-    margin: 0.5em 0;
+    margin: 0.25em 0 0;
   }
 
   h2 {
-    font-size: 1.15em;
+    font-size: 1em;
     color: $primary;
     font-weight: 400;
 

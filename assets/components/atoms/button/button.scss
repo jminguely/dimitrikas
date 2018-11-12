@@ -5,4 +5,11 @@
   line-height: 1.1em;
   letter-spacing: 0.1em;
   font-weight: 700;
+  white-space:normal !important;
+    word-wrap: break-word; 
+}
+
+.btn-lg {
+  font-size: 1.1em;
+  padding: 0.3em 0.4em;
 }

@@ -8,7 +8,7 @@
 					{% for client in clients %}
 						<div class="col-6 col-sm-4 col-md-3 col-lg-2">
 							<figure class="text-center">
-								{{ fn('wp_get_attachment_image', client.picture, 'thumbnail', false, {'class': ''})|raw }}
+								{{ fn('wp_get_attachment_image', client.picture, 'thumbnail', false, {'class': 'mb-1'})|raw }}
 							</figure>
 						</div>
 					{% endfor %}

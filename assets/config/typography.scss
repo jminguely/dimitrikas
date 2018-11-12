@@ -54,9 +54,17 @@ body {
 }
 
 .text-medium {
-  font-size: 0.85em;
+  font-size: 0.9em;
 }
 
 .text-small {
   font-size: 0.75em;
+}
+
+.text-huge {
+  font-size: 3em;
+
+  @include media-breakpoint-down(sm) {
+    font-size: 2em;
+  }
 }

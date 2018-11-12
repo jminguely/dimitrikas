@@ -1,14 +1,23 @@
 {% if categories %}
-  <h2 class="h3 text-uppercase">Thèmes</h2>
-  <hr class="w-50 mr-0">
-  <div class="d-flex flex-column">
+  <h2 class="h3 text-uppercase mb-3 mb-sm-0">Thèmes</h2>
+  <hr class="w-50 mr-0 d-none d-sm-block">
+  <div class="d-flex flex-wrap flex-sm-column mb-3 mb-sm-0">
+    {% if current_term_id or fn('is_single') %}
+      <a class="badge badge-outline badge-lg mx-auto mr-sm-0 ml-sm-auto mb-2 mb-sm-3" href="/blog">
+        Tous
+      </a>
+    {% else %}
+      <span class="badge badge-secondary badge-lg mx-auto mr-sm-0 ml-sm-auto mb-2 mb-sm-3">
+        Tous
+      </span>
+    {% endif %}
     {% for category in categories %}         
       {% if category.term_id == current_term_id %}
-        <span class="badge badge-secondary badge-lg ml-auto mb-3">
+        <span class="badge badge-secondary badge-lg mx-auto mr-sm-0 ml-sm-auto mb-2 mb-sm-3">
           {{ category.name }}
         </span>
       {% else %}
-        <a class="badge badge-outline badge-lg ml-auto mb-3" href="{{ fn('get_term_link', category.term_id, 'category') }}">
+        <a class="badge badge-outline badge-lg mx-auto mr-sm-0 ml-sm-auto mb-2 mb-sm-3" href="{{ fn('get_term_link', category.term_id, 'category') }}">
           {{ category.name }}
         </a>
       {% endif %}

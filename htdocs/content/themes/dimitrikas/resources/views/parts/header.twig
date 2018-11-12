@@ -8,7 +8,15 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <!-- favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ templateUri }}/build/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ templateUri }}/build/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ templateUri }}/build/favicons/favicon-16x16.png">
+  <link rel="manifest" href="{{ templateUri }}/build/favicons/site.webmanifest">
+  <link rel="mask-icon" href="{{ templateUri }}/build/favicons/safari-pinned-tab.svg" color="#009fe3">
+  <link rel="shortcut icon" href="{{ templateUri }}/build/favicons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#009fe3">
+  <meta name="msapplication-config" content="{{ templateUri }}/build/favicons/browserconfig.xml">
+  <meta name="theme-color" content="#009fe3">
 
   {{ wp_head() }}
 </head>
@@ -22,8 +30,8 @@
 
     <header class="site-header">
       <div class="container text-center">
-        <a href="#"><img src="{{ templateUri }}/build/images/logo.png"></a>
-        <a href="#"><h1>Dimitri Kas</h1></a> 
+        <a href="{{ fn('home_url') }}"><img src="{{ templateUri }}/build/images/logo.svg"></a>
+        <a href="{{ fn('home_url') }}"><h1>Dimitri Kas</h1></a> 
         <h2>rédacteur web seo print</h2>
       </div>
     </header>
@@ -33,16 +41,8 @@
         Menu
       </a>
     </div>
-
     <nav class="main-nav" id="main-nav">
       <div class="content">
         {{ primaryMenu|raw }}
       </div>
     </nav>
-    {% if subMenu %}
-      <nav class="sub-nav" id="sub-nav">
-        <div class="content">
-          {{ subMenu|raw }}
-        </div>
-      </nav>
-    {% endif %}
