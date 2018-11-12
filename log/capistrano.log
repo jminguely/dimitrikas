@@ -240,3 +240,106 @@
   INFO [56cbf3ab] Finished in 0.145 seconds with exit status 0 (successful).
   INFO [5f57b0ae] Running /usr/bin/env echo "Branch master (at 44c9768e9bce78702328c351e0f0d22a6a3f8350) deployed as release 20181023095730 by mingus" >> /home/jminguely/www/dimitrikas.ch/revisions.log as jminguely@ssh-jminguely.alwaysdata.net
   INFO [0ab6f3b6] Finished in 0.181 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-11-12 17:01:02 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [8287e5e6] Running /usr/bin/env mkdir -p /tmp/dimitrikas.ch/ as jminguely@ssh-jminguely.alwaysdata.net
+  INFO [b9ba85cb] Finished in 4.117 seconds with exit status 0 (successful).
+  INFO Uploading /tmp/dimitrikas.ch/git-ssh.sh 100.0%
+  INFO [c995442f] Running /usr/bin/env chmod +rx /tmp/dimitrikas.ch/git-ssh.sh as jminguely@ssh-jminguely.alwaysdata.net
+  INFO [e78e3adc] Finished in 0.136 seconds with exit status 0 (successful).
+  INFO [17cb0ba1] Running /usr/bin/env git ls-remote --heads git@github.com:jminguely/dimitrikas.git as jminguely@ssh-jminguely.alwaysdata.net
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-11-12 17:01:15 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [81ff5597] Running /usr/bin/env mkdir -p /tmp/dimitrikas.ch/ as jminguely@ssh-jminguely.alwaysdata.net
+  INFO [01eeeb1b] Finished in 0.511 seconds with exit status 0 (successful).
+  INFO Uploading /tmp/dimitrikas.ch/git-ssh.sh 100.0%
+  INFO [d84f08a2] Running /usr/bin/env chmod +rx /tmp/dimitrikas.ch/git-ssh.sh as jminguely@ssh-jminguely.alwaysdata.net
+  INFO [db4ac653] Finished in 0.115 seconds with exit status 0 (successful).
+  INFO [4303a651] Running /usr/bin/env git ls-remote --heads git@github.com:jminguely/dimitrikas.git as jminguely@ssh-jminguely.alwaysdata.net
+  INFO [10b6963f] Finished in 1.421 seconds with exit status 0 (successful).
+  INFO [53db9bac] Running /usr/bin/env mkdir -p /home/jminguely/www/dimitrikas.ch/shared /home/jminguely/www/dimitrikas.ch/releases as jminguely@ssh-jminguely.alwaysdata.net
+  INFO [28c1a753] Finished in 0.181 seconds with exit status 0 (successful).
+  INFO [2637e538] Running /usr/bin/env mkdir -p /home/jminguely/www/dimitrikas.ch/shared/htdocs/content/uploads as jminguely@ssh-jminguely.alwaysdata.net
+  INFO [6f0ec7b4] Finished in 0.147 seconds with exit status 0 (successful).
+  INFO [30178344] Running /usr/bin/env mkdir -p /home/jminguely/www/dimitrikas.ch/shared /home/jminguely/www/dimitrikas.ch/shared/htdocs as jminguely@ssh-jminguely.alwaysdata.net
+  INFO [279b02ee] Finished in 0.133 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/jminguely/www/dimitrikas.ch/repo
+  INFO [57f9adb9] Running /usr/bin/env git remote update --prune as jminguely@ssh-jminguely.alwaysdata.net
+  INFO [7da91c7c] Finished in 2.182 seconds with exit status 0 (successful).
+  INFO [6be1c6ab] Running /usr/bin/env mkdir -p /home/jminguely/www/dimitrikas.ch/releases/20181112160119 as jminguely@ssh-jminguely.alwaysdata.net
+  INFO [2301db5f] Finished in 0.132 seconds with exit status 0 (successful).
+  INFO [f4228d49] Running /usr/bin/env git archive master | tar -x -f - -C /home/jminguely/www/dimitrikas.ch/releases/20181112160119 as jminguely@ssh-jminguely.alwaysdata.net
+  INFO [ed21d665] Finished in 1.321 seconds with exit status 0 (successful).
+  INFO [dca7455d] Running /usr/bin/env echo "483b3bc29fc73b46b088b6342713211e28e796ca" >> REVISION as jminguely@ssh-jminguely.alwaysdata.net
+  INFO [932cacc8] Finished in 0.126 seconds with exit status 0 (successful).
+  INFO [2f0f0ad3] Running /usr/bin/env mkdir -p /home/jminguely/www/dimitrikas.ch/releases/20181112160119 /home/jminguely/www/dimitrikas.ch/releases/20181112160119/htdocs as jminguely@ssh-jminguely.alwaysdata.net
+  INFO [e7dcc0b4] Finished in 0.163 seconds with exit status 0 (successful).
+  INFO [bf3c76b2] Running /usr/bin/env ln -s /home/jminguely/www/dimitrikas.ch/shared/.env /home/jminguely/www/dimitrikas.ch/releases/20181112160119/.env as jminguely@ssh-jminguely.alwaysdata.net
+  INFO [8e129c86] Finished in 0.135 seconds with exit status 0 (successful).
+  INFO [8b529e72] Running /usr/bin/env rm /home/jminguely/www/dimitrikas.ch/releases/20181112160119/htdocs/.htaccess as jminguely@ssh-jminguely.alwaysdata.net
+  INFO [a14a889f] Finished in 0.152 seconds with exit status 0 (successful).
+  INFO [7a6fae6f] Running /usr/bin/env ln -s /home/jminguely/www/dimitrikas.ch/shared/htdocs/.htaccess /home/jminguely/www/dimitrikas.ch/releases/20181112160119/htdocs/.htaccess as jminguely@ssh-jminguely.alwaysdata.net
+  INFO [f1ebdc40] Finished in 0.126 seconds with exit status 0 (successful).
+  INFO [e0d0cbd6] Running /usr/bin/env mkdir -p /home/jminguely/www/dimitrikas.ch/releases/20181112160119/htdocs/content as jminguely@ssh-jminguely.alwaysdata.net
+  INFO [b8225c1f] Finished in 0.129 seconds with exit status 0 (successful).
+  INFO [4612fff4] Running /usr/bin/env ln -s /home/jminguely/www/dimitrikas.ch/shared/htdocs/content/uploads /home/jminguely/www/dimitrikas.ch/releases/20181112160119/htdocs/content/uploads as jminguely@ssh-jminguely.alwaysdata.net
+  INFO [3e8a76db] Finished in 0.133 seconds with exit status 0 (successful).
+  INFO [0a89157c] Running php /home/jminguely/www/dimitrikas.ch/shared/composer.phar install --no-dev --prefer-dist --no-interaction --quiet --optimize-autoloader as jminguely@ssh-jminguely.alwaysdata.net
+  INFO [370c4fd5] Finished in 76.611 seconds with exit status 0 (successful).
+  INFO [27a0ee85] Running /usr/bin/env yarn --check-files --no-progress --silent as mingus@localhost
+  INFO [89bc8e11] Finished in 61.703 seconds with exit status 0 (successful).
+  INFO [b3165b9c] Running /usr/bin/env yarn build --production as mingus@localhost
+  INFO [8830c0a0] Finished in 10.182 seconds with exit status 0 (successful).
+  INFO Upload from local: [35mhtdocs/content/themes/dimitrikas/build[0m to remote [35m/home/jminguely/www/dimitrikas.ch/releases/20181112160119/htdocs/content/themes/dimitrikas/build[0m
+  INFO Uploading htdocs/content/themes/dimitrikas/build/svg/dk_badge.svg 100.0%
+  INFO Uploading htdocs/content/themes/dimitrikas/build/favicons/favicon-16x16.png 100.0%
+  INFO Uploading htdocs/content/themes/dimitrikas/build/favicons/safari-pinned-tab.svg 100.0%
+  INFO Uploading htdocs/content/themes/dimitrikas/build/favicons/favicon.ico 100.0%
+  INFO Uploading htdocs/content/themes/dimitrikas/build/favicons/android-chrome-192x192.png 100.0%
+  INFO Uploading htdocs/content/themes/dimitrikas/build/favicons/apple-touch-icon.png 100.0%
+  INFO Uploading htdocs/content/themes/dimitrikas/build/favicons/android-chrome-256x256.png 86.91%
+  INFO Uploading htdocs/content/themes/dimitrikas/build/favicons/android-chrome-256x256.png 100.0%
+  INFO Uploading htdocs/content/themes/dimitrikas/build/favicons/site.webmanifest 100.0%
+  INFO Uploading htdocs/content/themes/dimitrikas/build/favicons/mstile-150x150.png 100.0%
+  INFO Uploading htdocs/content/themes/dimitrikas/build/favicons/browserconfig.xml 100.0%
+  INFO Uploading htdocs/content/themes/dimitrikas/build/favicons/favicon-32x32.png 100.0%
+  INFO Uploading htdocs/content/themes/dimitrikas/build/css/base.css 15.58%
+  INFO Uploading htdocs/content/themes/dimitrikas/build/css/base.css 31.16%
+  INFO Uploading htdocs/content/themes/dimitrikas/build/css/base.css 46.75%
+  INFO Uploading htdocs/content/themes/dimitrikas/build/css/base.css 62.33%
+  INFO Uploading htdocs/content/themes/dimitrikas/build/css/base.css 77.91%
+  INFO Uploading htdocs/content/themes/dimitrikas/build/css/base.css 93.49%
+  INFO Uploading htdocs/content/themes/dimitrikas/build/css/base.css 100.0%
+  INFO Uploading htdocs/content/themes/dimitrikas/build/images/dk_logo_full.jpg 14.03%
+  INFO Uploading htdocs/content/themes/dimitrikas/build/images/dk_logo_full.jpg 28.05%
+  INFO Uploading htdocs/content/themes/dimitrikas/build/images/dk_logo_full.jpg 42.08%
+  INFO Uploading htdocs/content/themes/dimitrikas/build/images/dk_logo_full.jpg 56.1%
+  INFO Uploading htdocs/content/themes/dimitrikas/build/images/dk_logo_full.jpg 70.13%
+  INFO Uploading htdocs/content/themes/dimitrikas/build/images/dk_logo_full.jpg 84.15%
+  INFO Uploading htdocs/content/themes/dimitrikas/build/images/dk_logo_full.jpg 98.18%
+  INFO Uploading htdocs/content/themes/dimitrikas/build/images/dk_logo_full.jpg 100.0%
+  INFO Uploading htdocs/content/themes/dimitrikas/build/images/quotes.png 100.0%
+  INFO Uploading htdocs/content/themes/dimitrikas/build/images/logo.png 100.0%
+  INFO Uploading htdocs/content/themes/dimitrikas/build/images/logo.svg 100.0%
+  INFO Uploading htdocs/content/themes/dimitrikas/build/js/app.bundle.js 100.0%
+  INFO Uploading htdocs/content/themes/dimitrikas/build/js/vendors.min.js 18.97%
+  INFO Uploading htdocs/content/themes/dimitrikas/build/js/vendors.min.js 37.93%
+  INFO Uploading htdocs/content/themes/dimitrikas/build/js/vendors.min.js 56.9%
+  INFO Uploading htdocs/content/themes/dimitrikas/build/js/vendors.min.js 75.87%
+  INFO Uploading htdocs/content/themes/dimitrikas/build/js/vendors.min.js 94.83%
+  INFO Uploading htdocs/content/themes/dimitrikas/build/js/vendors.min.js 100.0%
+  INFO Uploading htdocs/content/themes/dimitrikas/build/icons/icons.svg 100.0%
+  INFO Uploading htdocs/content/themes/dimitrikas/build/fonts/crimson-roman-webfont.woff2 49.41%
+  INFO Uploading htdocs/content/themes/dimitrikas/build/fonts/crimson-roman-webfont.woff2 98.83%
+  INFO Uploading htdocs/content/themes/dimitrikas/build/fonts/crimson-roman-webfont.woff2 100.0%
+  INFO Uploading htdocs/content/themes/dimitrikas/build/fonts/crimson-italic-webfont.woff2 46.0%
+  INFO Uploading htdocs/content/themes/dimitrikas/build/fonts/crimson-italic-webfont.woff2 91.99%
+  INFO Uploading htdocs/content/themes/dimitrikas/build/fonts/crimson-italic-webfont.woff2 100.0%
+  INFO [d74a6aab] Running /usr/bin/env ln -s /home/jminguely/www/dimitrikas.ch/releases/20181112160119 /home/jminguely/www/dimitrikas.ch/releases/current as jminguely@ssh-jminguely.alwaysdata.net
+  INFO [1aa1c05c] Finished in 0.135 seconds with exit status 0 (successful).
+  INFO [056442c9] Running /usr/bin/env mv /home/jminguely/www/dimitrikas.ch/releases/current /home/jminguely/www/dimitrikas.ch as jminguely@ssh-jminguely.alwaysdata.net
+  INFO [4c895759] Finished in 0.135 seconds with exit status 0 (successful).
+  INFO [31a0dcba] Running /usr/bin/env echo "Branch master (at 483b3bc29fc73b46b088b6342713211e28e796ca) deployed as release 20181112160119 by mingus" >> /home/jminguely/www/dimitrikas.ch/revisions.log as jminguely@ssh-jminguely.alwaysdata.net
+  INFO [eee75694] Finished in 0.139 seconds with exit status 0 (successful).
