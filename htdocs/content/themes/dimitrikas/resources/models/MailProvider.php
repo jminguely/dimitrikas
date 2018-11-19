@@ -15,7 +15,7 @@ class MailProvider
      */
     static function send($data)
     {
-        $headers = "From: jminguely@gmail.com \r\n";
+        $headers = "From: hello@dimitrikas.ch \r\n";
         $headers .= "Reply-to: " .$data['email']. "\r\n";
         $sentState =  wp_mail( Option::get('primary', 'email_address'), 'Message depuis votre site: ', $data['message'], $headers );
         return $sentState;
