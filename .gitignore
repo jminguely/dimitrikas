@@ -1,6 +1,7 @@
 node_modules
 .sass-cache
 .publish
+log/capistrano.log
 
 /dist
 htdocs/content/themes/dimitrikas/build/
