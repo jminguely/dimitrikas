@@ -3,17 +3,17 @@
 {% block main %}
 	<div class="container">
     <div class="row">
-      <div class="col-sm-5 col-md-4 text-right">
+      <div class="col-sm-4 col-md-3 text-center text-sm-right">
         {% include "blog/sidebar.twig" with { 'categories' : categories} %}
       </div>
-      <div class="col-sm-7 col-md-7">
+      <div class="col-sm-8 col-md-8">
         <h2>{{ post.post_title }}</h2>
         {{ fn('get_the_post_thumbnail', post.ID, 'large', {'class': 'img-fluid'})|raw }}
        <div class="post-content">
         {{ wpautop(post.post_content)|raw }}
        </div>
        <div class="row">
-        <div class="col-7">
+        <div class="col-6">
           <hr class="w-50 ml-0">
           <h3 class="text-uppercase h5"><span class="text-primary">Recevoir</span> les prochains articles</h3>
           {{ Form.open('https://dimitrikas.us8.list-manage.com/subscribe/post?u=964e849c55256cdaccd26e304&amp;id=cb7975b07b', 'post', false, { 'class': 'form-inline'})|raw }}
@@ -25,7 +25,7 @@
             </div>
           {{ Form.close()|raw }}
         </div>
-        <div class="col-5">
+        <div class="col-6">
           <hr class="w-50 ml-0">
           <h3 class="text-uppercase h5"><span class="text-primary">Partager</span> cet article</h3>
           {% include "parts/social.twig" %}

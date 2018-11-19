@@ -3,14 +3,16 @@
 {% block main %}
 	<div class="container">
 		<div class="row">
-			<div class="col-12 mt-3 d-flex flex-row align-items-center">
-				<div class="lead">
-					{{ post.post_content|raw }}
-				</div>
-				<div class="img-badge">
-					<img class="img-full" src="{{ templateUri }}/build/svg/dk_badge.svg" alt="vos écrits sont sur le point de prendre un tournant décisif">
-				</div>
+			<div class="col-12 text-center">
+					<img class="img-fluid mb-3" width="200px" height="auto" src="{{ templateUri }}/build/svg/dk_badge.svg" alt="vos écrits sont sur le point de prendre un tournant décisif">
 			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+				<div class="lead">
+					{{ wpautop(post.post_content)|raw }}
+				</div>
+			 </div>
 		</div>
 	</div>
 {% endblock %}
