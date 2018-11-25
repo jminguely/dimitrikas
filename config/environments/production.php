@@ -28,3 +28,5 @@ define('SCRIPT_DEBUG', false);
 // Themosis framework
 define('THEMOSIS_ERROR', false);
 define('BS', false);
+
+define ( 'FORCE_SSL_ADMIN' , true);
