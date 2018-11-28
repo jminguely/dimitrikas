@@ -23,6 +23,7 @@ cs_fixer*
 ### Wordpress
 /htdocs/cms/*
 !/htdocs/cms/.gitkeep
+/htdocs/content/plugins/
 /htdocs/content/uploads/
 /htdocs/content/upgrade/
 
