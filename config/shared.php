@@ -44,7 +44,6 @@ define('NONCE_SALT',       'Q/T:B%jsS9<O!lo(3g]fQuq*Gs*v]VK--Bqx!SRg/)[tM8WIy;a:
 // Custom settings
 /*----------------------------------------------------*/
 define('WP_AUTO_UPDATE_CORE', false);
-define('DISALLOW_FILE_EDIT', true);
 define('WP_DEFAULT_THEME', 'dimitrikas');
 
 /* That's all, stop editing! Happy blogging. */
