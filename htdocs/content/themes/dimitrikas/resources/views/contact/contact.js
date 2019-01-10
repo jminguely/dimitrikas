@@ -1,6 +1,5 @@
 $(document).ready(function(){
   $('#contact_form #submit_form').attr('disabled', 'disabled');
-    console.log('lol');
   $('#contact_form').submit(function(e) {
     e.preventDefault();
       $.ajax({

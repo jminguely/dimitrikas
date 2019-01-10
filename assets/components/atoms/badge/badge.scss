@@ -6,6 +6,10 @@
   color: $gray-400;
 }
 
+.badge-secondary {
+  border: 1px solid transparent; 
+}
+
 .badge-lg {
   padding: 0.6em 1em;
   text-transform: uppercase;

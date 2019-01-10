@@ -32,7 +32,7 @@ class Contact extends Page
     static function ajaxProcess() {
         check_ajax_referer('dk', 'security');
         $data = array();
-        parse_str($_POST['data'], $data);
+        parse_str(wp_unslash($_POST['data']), $data);
         $validated_data = MailProvider::validate($data);
         if ($validated_data) {
             echo MailProvider::send($data);
