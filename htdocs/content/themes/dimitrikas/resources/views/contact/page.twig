@@ -18,7 +18,7 @@
         </div>
         <div {% if mailSent %}style="display:none"{% endif %}>
           {{ Form.open('', 'post', false, {'class': 'py-3', 'id': 'contact_form'})|raw }}
-          <form action="#" class="py-3">
+          <input hidden type="number" name="age" />
             <div class="form-group">
               {{ Form.textarea('message', formData.message ?: '', {'class': 'form-control required', 'placeholder': 'C’est ici qu’on engage la conversation...', 'rows': 8})|raw }} 
               <div class="input-group mt-3">

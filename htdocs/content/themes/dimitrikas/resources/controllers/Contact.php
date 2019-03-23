@@ -33,6 +33,7 @@ class Contact extends Page
         check_ajax_referer('dk', 'security');
         $data = array();
         parse_str(wp_unslash($_POST['data']), $data);
+
         $validated_data = MailProvider::validate($data);
         if ($validated_data) {
             echo MailProvider::send($data);
