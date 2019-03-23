@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.0.3 (2019-01-23)
+
+  - Adds a honeypot to avoid spam
+
 ## 1.0.2 (2019-01-23)
 
   - Core & plugins update
