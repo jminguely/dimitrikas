@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 1.0.4 (2019-05-21)
+
+  - Fix an alignment in the social icon
+  - WP update
+
 ## 1.0.3 (2019-01-23)
 
   - Adds a honeypot to avoid spam
