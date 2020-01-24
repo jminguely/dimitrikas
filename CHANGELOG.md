@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 1.1.0 (2020-01-24)
+
+  - WP / Core update
+  - Installation of the Google Recaptcha
+
 ## 1.0.4 (2019-05-21)
 
   - Fix an alignment in the social icon
