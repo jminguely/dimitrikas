@@ -10,7 +10,7 @@ class MailProvider
 {
     /**
      * Process the contact form
-     * 
+     *
      * @return array
      */
     static function send($data)
@@ -22,13 +22,6 @@ class MailProvider
     }
 
     static function validate($data) {
-        // Honeypot
-        // --------
-        // When this field is filled, we cancel the call to this endpoint.
-        if ($data['age'] != '') {
-            return false;
-        }
-    
         $data = Validator::multiple($data, [
             'email'      => ['email'],
             'message'    => ['textarea']
