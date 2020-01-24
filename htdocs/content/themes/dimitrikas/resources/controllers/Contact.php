@@ -34,8 +34,13 @@ class Contact extends Page
         $data = array();
         parse_str(wp_unslash($_POST['data']), $data);
 
+        $recaptcha_url = 'https://www.google.com/recaptcha/api/siteverify?secret=' . urlencode(getenv('RECAPTCHA_API_KEY')) .  '&response=' . urlencode($data["g-recaptcha-response"]);
+        $response = file_get_contents($recaptcha_url);
+        $responseKeys = json_decode($response,true);
+
         $validated_data = MailProvider::validate($data);
-        if ($validated_data) {
+
+        if ($validated_data && $responseKeys["success"]) {
             echo MailProvider::send($data);
         }else {
             echo false;

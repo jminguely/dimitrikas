@@ -1,6 +1,7 @@
 {% extends 'layouts/main.twig' %}
 
 {% block main %}
+  <script src='https://www.google.com/recaptcha/api.js'></script>
 	<div class="container">
     <div class="row">
       <div class="col-sm-8 offset-sm-2 col-lg-6 offset-lg-3">
@@ -8,21 +9,21 @@
           <a href="tel:+41 78 943 07 05">+41 78 943 07 05</a>
         </p>
          <div class="alert alert-danger text-center" role="alert" {% if not error %}style="display:none"{% endif %}>
-          <strong>Problème à l'envoi du formulaire</strong><br> 
+          <strong>Problème à l'envoi du formulaire</strong><br>
           Vérifiez votre saisie.
         </div>
         <div class="alert alert-success text-center" role="alert" {% if not mailSent %}style="display:none"{% endif %}>
-          <strong>Merci</strong><br> 
-          Votre message est bien parti. <br> 
+          <strong>Merci</strong><br>
+          Votre message est bien parti. <br>
           Je reviens vers vous dès que possible.
         </div>
         <div {% if mailSent %}style="display:none"{% endif %}>
           {{ Form.open('', 'post', false, {'class': 'py-3', 'id': 'contact_form'})|raw }}
-          <input hidden type="number" name="age" />
             <div class="form-group">
-              {{ Form.textarea('message', formData.message ?: '', {'class': 'form-control required', 'placeholder': 'C’est ici qu’on engage la conversation...', 'rows': 8})|raw }} 
+              {{ Form.textarea('message', formData.message ?: '', {'class': 'form-control required', 'placeholder': 'C’est ici qu’on engage la conversation...', 'rows': 8})|raw }}
+            <div class="g-recaptcha mt-3" data-sitekey="6LdUXdIUAAAAAAkVzJK1ZpOaUaMbzEAFfR3gNV2C"></div>
               <div class="input-group mt-3">
-                {{ Form.text('email', formData.email ?: '', {'class': 'form-control required', 'placeholder': 'Votre adresse e-mail'})|raw }}       
+                {{ Form.text('email', formData.email ?: '', {'class': 'form-control required', 'placeholder': 'Votre adresse e-mail'})|raw }}
                 <div class="input-group-append">
                   {{ Form.submit('submit', 'envoyer', {'class': 'btn btn-primary', 'id': 'submit_form'})|raw }}
                 </div>
