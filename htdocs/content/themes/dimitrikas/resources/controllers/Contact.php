@@ -21,7 +21,11 @@ class Contact extends Page
         $data = Input::all();
         $validated_data = MailProvider::validate($data);
 
-        if ($validated_data) {
+        $recaptcha_url = 'https://www.google.com/recaptcha/api/siteverify?secret=' . urlencode(getenv('RECAPTCHA_API_KEY')) .  '&response=' . urlencode($data["g-recaptcha-response"]);
+        $response = file_get_contents($recaptcha_url);
+        $responseKeys = json_decode($response,true);
+
+        if ($validated_data && $responseKeys["success"]) {
             $mailSent = MailProvider::send($data);
             return view('contact/page', ['mailSent' => $mailSent]);
         }else {
@@ -33,12 +37,11 @@ class Contact extends Page
         check_ajax_referer('dk', 'security');
         $data = array();
         parse_str(wp_unslash($_POST['data']), $data);
+        $validated_data = MailProvider::validate($data);
 
         $recaptcha_url = 'https://www.google.com/recaptcha/api/siteverify?secret=' . urlencode(getenv('RECAPTCHA_API_KEY')) .  '&response=' . urlencode($data["g-recaptcha-response"]);
         $response = file_get_contents($recaptcha_url);
         $responseKeys = json_decode($response,true);
-
-        $validated_data = MailProvider::validate($data);
 
         if ($validated_data && $responseKeys["success"]) {
             echo MailProvider::send($data);
